@@ -1,0 +1,13 @@
+stack: node 10 # окружение
+branches:
+  only:
+    - master # ветка git
+cache: node_modules # кеширование
+install:
+  - yarn install # команда установки зависимостей
+build: off
+build_script:
+  - yarn run build # команда сборки
+test_script:
+  - yarn run lint # скрипт тестирования
+
