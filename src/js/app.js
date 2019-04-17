@@ -1,6 +1,6 @@
-import Tabeel from './Tabel';
+import Table from './Table';
 
-const tabel = new Tabeel('.js-table-body', [
+const table = new Table('.js-table-body', [
   {
     id: 26, title: 'Побег из Шоушенка', imdb: 9.30, year: 1994,
   },
@@ -18,4 +18,4 @@ const tabel = new Tabeel('.js-table-body', [
   },
 ]);
 
-setInterval(tabel.sortBy.bind(tabel), 2000);
+setInterval(table.sortBy.bind(table), 2000);
