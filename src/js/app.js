@@ -1,6 +1,6 @@
 import Tabeel from './Tabel';
 
-const data = [
+const tabel = new Tabeel('.js-table-body', [
   {
     id: 26, title: 'Побег из Шоушенка', imdb: 9.30, year: 1994,
   },
@@ -16,8 +16,6 @@ const data = [
   {
     id: 223, title: 'Криминальное чтиво', imdb: 8.90, year: 1994,
   },
-];
+]);
 
-const tabel = new Tabeel('.js-table-body', data, 2000);
-tabel.createRows(data);
-setInterval(tabel.sortBy.bind(tabel), tabel.time);
+setInterval(tabel.sortBy.bind(tabel), 2000);

@@ -1,9 +1,10 @@
 class Table {
-  constructor(el, data, time) {
+  constructor(el, data) {
     this.el = document.querySelector(el);
     this.data = data;
-    this.time = time;
     this.counter = 0;
+
+    this.createRows();
   }
 
   sortBy() {
@@ -20,8 +21,8 @@ class Table {
     this.counter++;
   }
 
-  createRows(rows) {
-    for (const row of rows) {
+  createRows() {
+    for (const row of this.data) {
       const tr = document.createElement('tr');
 
       tr.innerHTML = `<td>#${row.id}</td><td>${row.title}</td><td>(${row.year})</td><td>imdb: ${row.imdb}</td>`;
