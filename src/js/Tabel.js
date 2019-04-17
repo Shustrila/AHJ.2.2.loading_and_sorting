@@ -4,32 +4,23 @@ class Table {
     this.data = data;
     this.time = time;
     this.counter = 0;
-
-    this.init();
   }
 
-  init() {
-    this.createRow(this.data);
-    this.sortByInterval();
-  }
+  sortBy() {
+    if (this.data[this.counter + 1] !== undefined) {
+      const dataId = this.el.querySelectorAll('[data-id]');
+      const thisAttrId = dataId[this.counter].getAttribute('data-id');
+      const nextAttrId = dataId[this.counter + 1].getAttribute('data-id');
 
-  sortByInterval() {
-    setInterval(() => {
-      if (this.data[this.counter + 1] !== undefined) {
-        const dataId = this.el.querySelectorAll('[data-id]');
-        const thisAttrId = dataId[this.counter].getAttribute('data-id');
-        const nextAttrId = dataId[this.counter + 1].getAttribute('data-id');
-
-        if (+thisAttrId > +nextAttrId) {
-          this.el.insertBefore(dataId[this.counter], this.el.children[this.counter + 1]);
-          this.el.insertBefore(dataId[this.counter + 1], this.el.children[this.counter]);
-        }
+      if (+thisAttrId > +nextAttrId) {
+        this.el.insertBefore(dataId[this.counter], this.el.children[this.counter + 1]);
+        this.el.insertBefore(dataId[this.counter + 1], this.el.children[this.counter]);
       }
-      this.counter++;
-    }, this.time);
+    }
+    this.counter++;
   }
 
-  createRow(rows) {
+  createRows(rows) {
     for (const row of rows) {
       const tr = document.createElement('tr');
 
