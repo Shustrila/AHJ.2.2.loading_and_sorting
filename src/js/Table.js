@@ -1,3 +1,6 @@
+import arrowUp from '../image/arrow-up.svg'
+import arrowDown from '../image/arrow-down.svg'
+
 class Table {
   constructor(el, data) {
     this.el = document.querySelector(el);
@@ -9,13 +12,17 @@ class Table {
 
   sortBy() {
     if (this.data[this.counter + 1] !== undefined) {
+      const arrowSort = document.querySelector('#arrow-sort');
       const dataId = this.el.querySelectorAll('[data-id]');
       const thisAttrId = dataId[this.counter].getAttribute('data-id');
       const nextAttrId = dataId[this.counter + 1].getAttribute('data-id');
 
       if (+thisAttrId > +nextAttrId) {
+        arrowSort.innerHTML = '&#x2191';
         this.el.insertBefore(dataId[this.counter], this.el.children[this.counter + 1]);
         this.el.insertBefore(dataId[this.counter + 1], this.el.children[this.counter]);
+      } else {
+        arrowSort.innerHTML = '&#x2193';
       }
     }
     this.counter++;
