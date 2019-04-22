@@ -1,6 +1,3 @@
-import arrowUp from '../image/arrow-up.svg'
-import arrowDown from '../image/arrow-down.svg'
-
 class Table {
   constructor(el, data) {
     this.el = document.querySelector(el);
