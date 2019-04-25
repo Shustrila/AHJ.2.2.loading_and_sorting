@@ -18,4 +18,4 @@ const table = new Table('.js-table-body', [
   },
 ]);
 
-setInterval(table.sortBy.bind(table), 2000);
+setInterval(table.sortBy.bind(table), 1000);
